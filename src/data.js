@@ -57,7 +57,6 @@ function cleanValue(val) {
 }
 
 function cleanObject(array) {
-  console.log(array);
   const confimed = array.find(a => a?.date?.includes?.("Confirmed"));
   const recovered = array.find(a => a?.date?.includes?.("Recovered"));
   const death = array.find(a => a?.date?.includes?.("Death"));
