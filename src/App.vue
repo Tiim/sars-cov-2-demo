@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <Layout>
+    <Graph :data="data ? data.array : null" />
+  </Layout>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import Graph from "./components/Graph";
+import Layout from "./components/Layout";
+import { fetchData } from "./data";
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Graph,
+    Layout
+  },
+  data() {
+    return { data: null };
+  },
+  async mounted() {
+    this.data = await fetchData();
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
