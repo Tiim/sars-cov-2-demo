@@ -2,7 +2,7 @@
   <div>
     <SelectStats @selection="selected" :data="data" />
     <div class="chart-container">
-      <LaCartesian v-if="data" autoresize :data="data" :width="1400">
+      <LaCartesian v-if="data" autoresize :data="data" :width="width * 0.8">
         <LaArea v-for="val in values" :key="val" :prop="val" dot :label="val" />
         <la-x-axis prop="date" :interval="Math.ceil(3 * (data.length / 20))" />
         <la-y-axis :interval="10" />
@@ -35,7 +35,8 @@ export default {
   },
   data() {
     return {
-      values: ["confirmedcases_new", "confirmedcases_total"]
+      values: ["confirmedcases_new", "confirmedcases_total"],
+      width: screen.width
     };
   },
   methods: {

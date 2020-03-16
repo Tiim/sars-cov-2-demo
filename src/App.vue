@@ -1,11 +1,7 @@
 <template>
   <Layout>
     <h1 class="title">
-      2020 SARS-COV-19 Tracker for Switzerland<img
-        alt="Switzerland Emoji"
-        src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/openmoji/213/flag-for-switzerland_1f1e8-1f1ed.png"
-        class="icon is-large"
-      />
+      2020 SARS-COV-19 Tracker for Switzerland
     </h1>
     <Graph :data="data ? data.array : null" />
   </Layout>
