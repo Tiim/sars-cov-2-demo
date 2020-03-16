@@ -41,7 +41,6 @@ export default {
   methods: {
     selected(arr) {
       this.values.splice(0, this.values.length, ...arr);
-      console.log(this.config);
     }
   }
 };
