@@ -2,7 +2,9 @@
   <div>
     <Header />
     <div class="section">
-      <slot />
+      <div class="container">
+        <slot />
+      </div>
     </div>
     <div class="section has-text-centered">
       <Footer />

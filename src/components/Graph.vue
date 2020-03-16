@@ -2,7 +2,7 @@
   <div>
     <SelectStats @selection="selected" :data="data" />
     <div class="chart-container">
-      <LaCartesian v-if="data" autoresize :data="data" :width="900">
+      <LaCartesian v-if="data" autoresize :data="data" :width="1400">
         <LaArea v-for="val in values" :key="val" :prop="val" dot :label="val" />
         <la-x-axis prop="date" :interval="Math.ceil(3 * (data.length / 20))" />
         <la-y-axis :interval="10" />
