@@ -1,13 +1,16 @@
 <template>
   <div class="container">
-    <div
+    <button
       v-for="s in stats"
       :key="s"
       :class="{ item: true, selected: selected.includes(s) }"
       @click="select(s)"
     >
       {{ s }}
-    </div>
+    </button>
+    <button class="item close-button" @click="isClosed = !isClosed">
+      {{ isClosed ? "Expand" : "Hide" }}
+    </button>
   </div>
 </template>
 
@@ -19,7 +22,8 @@ export default {
   },
   data() {
     return {
-      selected: []
+      selected: ["confirmedcases_new", "confirmedcases_total"],
+      isClosed: true
     };
   },
   computed: {
@@ -27,7 +31,13 @@ export default {
       if (!this.data || !this.data.length) {
         return [];
       }
-      return Object.keys(this.data[0]);
+      if (!this.isClosed) {
+        return Object.keys(this.data[0]).filter(
+          s => !s.includes("date") && !s.includes("sources")
+        );
+      } else {
+        return this.selected;
+      }
     }
   },
   methods: {
@@ -54,8 +64,12 @@ export default {
   background: whitesmoke;
   border-radius: 4px;
   justify-content: center;
+  border-width: 0px;
+  padding: 5px;
 }
-
+.close-button {
+  grid-column: 1 / -1;
+}
 .item:hover {
   background: lightblue;
 }

@@ -11,8 +11,9 @@
   "dependencies": {
     "bulma": "^0.8.0",
     "core-js": "^3.6.4",
+    "laue": "^0.2.1",
     "vue": "^2.6.11",
-    "vue-d3-charts": "^0.2.8"
+    "vue-spinner": "^1.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
