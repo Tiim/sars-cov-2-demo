@@ -1,5 +1,9 @@
 # sars-cov-2
 
+A little demo site that visualises the current international corona virus statistics.
+
+Data source: [github.com/Tiim/daily-coronavirus-stats](https://github.com/Tiim/daily-coronavirus-stats)
+
 ## Project setup
 ```
 npm install
