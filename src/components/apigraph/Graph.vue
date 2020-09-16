@@ -15,9 +15,7 @@
           :data="selectedData"
           :width="width * 0.8"
         >
-          <LaArea prop="totalCases" dot label="Total Cases" />
           <LaArea prop="cases" dot label="New Cases" />
-          <LaArea prop="totalDeaths" dot label="Total Deaths" />
           <LaArea prop="deaths" dot label="New Deaths" />
           <la-x-axis
             prop="date"
